@@ -104,10 +104,8 @@ if ($this->data['errorcode'] !== NULL) {
 }
 ?>				
 				<form id="login" method="POST" action="?" name="f">
-					<label for="username"><?php echo $this->t('{login:username}'); ?></label> <!-- <span class="example">(bv. 123456@catherijne.nl)</span> -->
-					<input type="text" name="username" id="username" value="<?php echo htmlspecialchars($this->data['username']); ?>" autocomplete= "off" />
-					<label for="password"><?php echo $this->t('{login:password}'); ?></label>
-					<input type="password" name="password" id="password" autocomplete= "off" />
+					<input type="text" name="username" id="username" value="<?php echo htmlspecialchars($this->data['username']); ?>" autocomplete= "off" placeholder="Usuario"/>
+					<input type="password" name="password" id="password" autocomplete= "off" placeholder="Contraseña"/>
 					<!-- <a href="#" class="recover">Wachtwoord vergeten?</a> -->
 					<input onclick="this.value='Processing...';this.disabled=true;this.form.submit();return true;" type="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
 
@@ -126,8 +124,14 @@ foreach ($this->data['stateparams'] as $name => $value) {
 			<div class="subitem">
 
 			  <div class="createIndex">
-                <h2><?php echo $this->t('{login:help_header}');?></h2>
-                <p><?php echo $this->t('{login:help_text}');?></p>
+					<a href="https://funcionarios.portaloas.udistrital.edu.co/lamasu/index.php?temasys=oAGJch1mOVXmyh3FwYoKXAwrmNRYHn5-_Xn8HKG5y350uNo9UTedQMek1v6QBnYpEszxCzQLJp7nOktBfNVL74tv6OXnmP3NUfEIION2htC2NCeD32RO1twSM70tAIvFRSPOKZuQzOyhv5YEJmYkkhYfY_LxcQSf5W0zbY_vZisPhcWCPJNPbBF9GWMx14YqHYOKf3HrIcJM2Q">
+						<h2><?php echo $this->t('{login:help_header}');?></h2>
+					</a>
+					<p>
+						<?php echo $this->t('{login:help_text}');?>
+						<img id="logo_surf_net" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo_surf_net.png'); ?>" style="width:70px;height:30px;float:right;"/> <!-- DIT IS HET LOGO -->
+					</p>
+
 <!--
        		    <ul>
 					<h2>Tips:</h2>
